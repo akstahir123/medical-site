@@ -1,0 +1,111 @@
+/* Reset and global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --red-color: red;
+    --blue-color: blue;
+    --light-green: lightgreen;
+    --gray-color: gray;
+    --heading-font: 2.4rem;
+    --paragraph-font: 1.6rem;
+    --sub-heading: 2rem;
+}
+
+/* Container styles */
+.container {
+    max-width: 120rem;
+    margin-inline: auto;
+    background-color: #000;
+    font-size: var(--paragraph-font);
+}
+
+@media (max-width: 120rem) {
+    .container {
+        padding-inline: 2rem;
+    }
+}
+
+/* Header section */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 8rem;
+}
+
+header .logo {
+    font-size: var(--heading-font);
+}
+
+.logo a {
+    text-decoration: none;
+    color: var(--white-color);
+}
+
+header nav {
+    display: block; /* Default to block for larger screens */
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ul li {
+    padding: 1rem 1.5rem;
+}
+
+ul li:hover {
+    background-color: var(--gray-color);
+    border-radius: 0.5rem;
+}
+
+li a {
+    text-decoration: none;
+    color: var(--white-color);
+    font-size: var(--sub-heading);
+}
+
+header i {
+    display: none;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 112rem) {
+    ul li {
+        padding: 1rem 1rem;
+    }
+    .logo {
+        font-size: var(--sub-heading);
+    }
+}
+
+@media (max-width: 102rem) {
+    header nav {
+        display: none; /* Hide nav on smaller screens */
+    }
+    header i {
+        display: block;
+        color: var(--white-color);
+        font-size: var(--heading-font);
+    }
+}
+
+@media (min-width: 102rem) {
+    header nav {
+        display: block; /* Ensure nav is visible on wider screens */
+    }
+}
